@@ -1,0 +1,14 @@
+version: "2"
+services:
+  db:
+    build: ./db/
+  app :
+    build: ./app/
+  tg:
+    build: ./tg/
+    restart: on-failure
+  flask:
+    build: ./flask
+    restart: on-failure
+    ports:
+      - "5000:5000"
